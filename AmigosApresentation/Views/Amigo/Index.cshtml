@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AmigosDominio.AmigoModelo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>ListAmigosNascimento</h1>
+
+<p>
+    <a asp-action="ListAmigosEmail">Ir para Lista com Email.</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Sobrenome
+            </th>
+            <th>
+                Data de Nascimento
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sobrenome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNasc)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
